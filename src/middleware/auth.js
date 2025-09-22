@@ -11,7 +11,7 @@ const userAuth = async (req, res, next) => {
     const user = await User.findById(decodedObj.id);
 
     if (!token) {
-      throw new Error("Unauthorized: No token provided");
+      return res.status(401).send("Please Login!");
     }
     if (!user) {
       throw new Error("Unauthorized: User not found");
