@@ -54,7 +54,7 @@ authRouter.post("/login", async (req, res) => {
       if (!isPasswordMatch) {
         return res.status(404).send("Invalid credentials");
       } else {
-        res.send("Login successful");
+        res.send(user);
       }
     }
   } catch (err) {
